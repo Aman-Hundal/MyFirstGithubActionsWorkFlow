@@ -1,0 +1,17 @@
+name: DockerAction
+
+inputs:
+  who-to-greet:
+    description: 'input to use for greeting'
+    deafult: 'world'
+    required: true
+outputs:
+  time:
+    description: 'The time of the greeting'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+  
